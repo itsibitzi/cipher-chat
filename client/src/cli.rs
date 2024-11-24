@@ -3,6 +3,7 @@ use reqwest::Url;
 
 #[derive(Parser)]
 pub struct Cli {
+    #[clap(long)]
     pub api_url: Url,
     #[clap(subcommand)]
     pub command: Command,
