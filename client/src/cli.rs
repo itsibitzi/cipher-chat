@@ -1,3 +1,5 @@
+use std::path::PathBuf;
+
 use clap::{Parser, Subcommand};
 use reqwest::Url;
 
@@ -5,6 +7,8 @@ use reqwest::Url;
 pub struct Cli {
     #[clap(long)]
     pub api_url: Url,
+    #[clap(long)]
+    pub user_db_path: PathBuf,
     #[clap(subcommand)]
     pub command: Command,
 }

@@ -4,16 +4,11 @@ members = ["client", "common", "server"]
 resolver = "2"
 
 [workspace.dependencies]
-# For simplicity I'm going to use the eyre library for everything
 color-eyre = "0.6.3"
-
-# Our client CLI wil be set up with the excellent clap crate.
 clap = { version = "4.5.21", features = ["derive"] }
-
-# We're going to use axum in our server and reqwest in our client to send
-# messages, which will be serialized as JSON.
 tokio = { version = "1.41.1", features = ["full"] }
 axum = "0.7.9"
 reqwest = "0.12.9"
 serde = { version = "1.0.215", features = ["derive"] }
 serde_json = "1.0.113"
+sqlx = { version = "0.8", features = ["runtime-tokio", "sqlite"] }
